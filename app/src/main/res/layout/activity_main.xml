@@ -174,14 +174,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+
                         android:value="186"
+                        android:valueFrom="120"
+                        android:valueTo="220"
+                        android:stepSize="1"
+
                         app:haloColor="#337A20FF"
                         app:thumbColor="#7A20FF"
-                        app:trackActiveTint="#7A20FF"
-                        app:trackInactiveTint="#55516D"
-                        app:valueFrom="120"
-                        app:valueTo="220"
-                        app:stepSize="1" />
+                        app:trackColorActive="#7A20FF"
+                        app:trackColorInactive="#55516D" />
 
 
                     <LinearLayout
@@ -278,26 +280,30 @@
                         android:layout_width="58dp"
                         android:layout_height="58dp"
                         android:layout_marginEnd="10dp"
-                        android:text="@string/btn_minus"
+                        android:text="−"
                         android:textColor="#FFFFFF"
                         android:textSize="26sp"
+
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+
                         app:backgroundTint="#6D16F5"
-                        app:cornerRadius="29dp"
-                        app:insetTop="0dp"
-                        app:insetBottom="0dp" />
+                        app:cornerRadius="29dp" />
 
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnPlus"
                         android:layout_width="58dp"
                         android:layout_height="58dp"
-                        android:text="@string/btn_plus"
+                        android:text="+"
                         android:textColor="#FFFFFF"
                         android:textSize="26sp"
+
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+
                         app:backgroundTint="#6D16F5"
-                        app:cornerRadius="29dp"
-                        app:insetTop="0dp"
-                        app:insetBottom="0dp" />
+                        app:cornerRadius="29dp" />
 
                 </LinearLayout>
 
@@ -314,10 +320,12 @@
                 android:textColor="#FFFFFF"
                 android:textSize="17sp"
                 android:textStyle="bold"
+
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+
                 app:backgroundTint="#7115FF"
-                app:cornerRadius="18dp"
-                app:insetTop="0dp"
-                app:insetBottom="0dp" />
+                app:cornerRadius="18dp" />
 
 
             <!-- RESULTAT -->
