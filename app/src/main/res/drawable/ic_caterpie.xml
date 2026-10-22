@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="160dp"
+    android:viewportWidth="160"
+    android:viewportHeight="160">
+
+    <!-- Tail Segment (Green) -->
+    <path
+        android:pathData="M 25 110 C 15 110 10 95 20 85 C 30 75 42 85 40 100 Z"
+        android:fillColor="#388E3C"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="2.5" />
+
+    <!-- Tail Tip Accent (Yellow) -->
+    <path
+        android:pathData="M 12 92 C 16 88 22 92 20 98 Z"
+        android:fillColor="#FFF59D" />
+
+    <!-- Body Segment 3 (Green) -->
+    <path
+        android:pathData="M 35 102 C 30 80 50 70 65 82 C 75 92 70 115 50 115 C 40 115 35 110 35 102 Z"
+        android:fillColor="#4CAF50"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="2.5" />
+
+    <!-- Body Segment 2 (Green) -->
+    <path
+        android:pathData="M 60 90 C 55 65 80 55 95 70 C 105 82 100 108 80 110 C 68 112 60 102 60 90 Z"
+        android:fillColor="#4CAF50"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="2.5" />
+
+    <!-- Yellow Ring Spots on Body -->
+    <path
+        android:pathData="M 48 88 C 53 88 57 92 57 96 C 57 100 53 104 48 104 C 43 104 39 100 39 96 C 39 92 43 88 48 88 Z"
+        android:fillColor="#FFEE58"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="1.5" />
+    <path
+        android:pathData="M 75 75 C 81 75 86 80 86 85 C 86 90 81 95 75 95 C 69 95 64 90 64 85 C 64 80 69 75 75 75 Z"
+        android:fillColor="#FFEE58"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="1.5" />
+
+    <!-- Head Segment (Large Green) -->
+    <path
+        android:pathData="M 85 75 C 80 40 120 30 140 55 C 152 70 145 100 120 105 C 98 110 85 95 85 75 Z"
+        android:fillColor="#4CAF50"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="3" />
+
+    <!-- Yellow Underbelly -->
+    <path
+        android:pathData="M 50 112 C 70 118 100 114 118 104 C 105 115 70 122 50 112 Z"
+        android:fillColor="#FFF59D"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="1.5" />
+
+    <!-- Feet (Small Suction Pads) -->
+    <path
+        android:pathData="M 52 114 C 52 122 60 122 60 114 Z M 78 110 C 78 118 86 118 86 110 Z M 102 105 C 102 113 110 113 110 105 Z"
+        android:fillColor="#81C784"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="2" />
+
+    <!-- Large Eye Outer Ring (Yellow) -->
+    <path
+        android:pathData="M 105 52 C 115 52 123 60 123 70 C 123 80 115 88 105 88 C 95 88 87 80 87 70 C 87 60 95 52 105 52 Z"
+        android:fillColor="#FFEE58"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="2.5" />
+
+    <!-- Eye Pupil (Black) -->
+    <path
+        android:pathData="M 107 58 C 113 58 118 63 118 70 C 118 77 113 82 107 82 C 101 82 96 77 96 70 C 96 63 101 58 107 58 Z"
+        android:fillColor="#212121" />
+
+    <!-- Eye Highlight (White Pupil Reflection) -->
+    <path
+        android:pathData="M 111 63 C 114 63 116 65 116 68 C 116 71 114 73 111 73 C 108 73 106 71 106 68 C 106 65 108 63 111 63 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Y-Shaped Red Antenna on forehead -->
+    <path
+        android:pathData="M 122 50 L 115 32 L 102 18 L 112 18 L 122 28 L 132 18 L 142 18 L 129 32 Z"
+        android:fillColor="#FF1744"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="2.5" />
+
+    <!-- Mouth Line (Cute Snout) -->
+    <path
+        android:pathData="M 132 82 C 138 82 140 86 138 90"
+        android:fillColor="#00000000"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="2"
+        android:strokeLineCap="round" />
+
+</vector>

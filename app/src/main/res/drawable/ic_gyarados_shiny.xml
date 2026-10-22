@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="160dp"
+    android:viewportWidth="160"
+    android:viewportHeight="160">
+
+    <!-- Shiny Stars Background Sparkles -->
+    <path
+        android:pathData="M 20 25 L 23 32 L 30 35 L 23 38 L 20 45 L 17 38 L 10 35 L 17 32 Z"
+        android:fillColor="#FFD700" />
+    <path
+        android:pathData="M 135 20 L 137 25 L 142 27 L 137 29 L 135 34 L 133 29 L 128 27 L 133 25 Z"
+        android:fillColor="#FFF59D" />
+    <path
+        android:pathData="M 140 120 L 142 124 L 146 126 L 142 128 L 140 132 L 138 128 L 134 126 L 138 124 Z"
+        android:fillColor="#FFD700" />
+    <path
+        android:pathData="M 15 125 L 17 129 L 21 131 L 17 133 L 15 137 L 13 133 L 9 131 L 13 129 Z"
+        android:fillColor="#FFD700" />
+
+    <!-- Serpent Body Coils (Red Shiny) -->
+    <!-- Tail coil -->
+    <path
+        android:pathData="M 125 120 C 100 145 50 140 35 120 C 20 100 30 75 45 70 C 60 65 75 80 65 95 C 55 110 35 95 40 85"
+        android:fillColor="#00000000"
+        android:strokeColor="#C62828"
+        android:strokeWidth="18"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M 125 120 C 100 145 50 140 35 120 C 20 100 30 75 45 70 C 60 65 75 80 65 95 C 55 110 35 95 40 85"
+        android:fillColor="#00000000"
+        android:strokeColor="#FF1744"
+        android:strokeWidth="14"
+        android:strokeLineCap="round" />
+
+    <!-- Main Neck/Torso (Red Shiny) -->
+    <path
+        android:pathData="M 45 100 C 65 120 110 110 115 80 C 120 50 95 35 80 40"
+        android:fillColor="#00000000"
+        android:strokeColor="#B71C1C"
+        android:strokeWidth="24"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M 45 100 C 65 120 110 110 115 80 C 120 50 95 35 80 40"
+        android:fillColor="#00000000"
+        android:strokeColor="#D32F2F"
+        android:strokeWidth="20"
+        android:strokeLineCap="round" />
+
+    <!-- Underbelly Cream Stripes -->
+    <path
+        android:pathData="M 50 105 C 70 120 105 112 110 85"
+        android:fillColor="#00000000"
+        android:strokeColor="#FFF59D"
+        android:strokeWidth="6"
+        android:strokeLineCap="round" />
+
+    <!-- Head Main Structure -->
+    <path
+        android:pathData="M 70 45 C 60 30 85 15 110 25 C 130 35 135 60 115 75 C 95 85 75 70 70 45 Z"
+        android:fillColor="#D32F2F"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="2.5" />
+
+    <!-- Open Roaring Mouth (Dark / Fangs) -->
+    <path
+        android:pathData="M 100 50 C 115 48 128 58 120 70 C 105 75 95 62 100 50 Z"
+        android:fillColor="#212121"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="2" />
+    <!-- Fangs (White) -->
+    <path
+        android:pathData="M 103 49 L 106 55 L 109 49 M 115 52 L 117 58 L 120 53 M 105 68 L 108 62 L 111 67"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Large Cyan/White Crest Crown on Head -->
+    <path
+        android:pathData="M 80 32 L 55 10 L 75 22 L 85 2 L 95 22 L 115 8 L 98 32 Z"
+        android:fillColor="#E0F7FA"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="2.5" />
+
+    <!-- Whiskers / Barbels (Cyan/Blue) -->
+    <path
+        android:pathData="M 100 68 C 90 85 65 85 50 90 M 105 65 C 95 80 75 78 60 80"
+        android:fillColor="#00000000"
+        android:strokeColor="#80DEEA"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round" />
+
+    <!-- Eye (Fierce Yellow & Red) -->
+    <path
+        android:pathData="M 88 38 L 98 40 L 92 48 Z"
+        android:fillColor="#FFD54F"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="2" />
+    <path
+        android:pathData="M 92 40 L 95 41 L 93 45 Z"
+        android:fillColor="#1A1A1A" />
+
+    <!-- Back Spine Fins (White/Cyan) -->
+    <path
+        android:pathData="M 112 85 L 128 92 L 115 98 M 98 105 L 112 115 L 98 120"
+        android:fillColor="#E0F7FA"
+        android:strokeColor="#1A1A1A"
+        android:strokeWidth="2" />
+
+</vector>

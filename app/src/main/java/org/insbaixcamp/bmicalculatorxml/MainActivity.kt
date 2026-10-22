@@ -4,6 +4,8 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -58,10 +60,28 @@ class MainActivity : AppCompatActivity() {
 
         val btnCalculate = findViewById<MaterialButton>(R.id.btnCalculate)
 
+        // Referències de la Carta Pokémon Resultat
         val cardResult = findViewById<MaterialCardView>(R.id.cardResult)
-        val tvResultTitle = findViewById<TextView>(R.id.tvResultTitle)
-        val tvBMI = findViewById<TextView>(R.id.tvBMI)
+        val layoutCardContent = findViewById<LinearLayout>(R.id.layoutCardContent)
+
+        val tvPokemonStage = findViewById<TextView>(R.id.tvPokemonStage)
+        val tvPokemonName = findViewById<TextView>(R.id.tvPokemonName)
+        val tvPokemonHP = findViewById<TextView>(R.id.tvPokemonHP)
+        val ivTypeIcon = findViewById<ImageView>(R.id.ivTypeIcon)
+
+        val ivPokemonArt = findViewById<ImageView>(R.id.ivPokemonArt)
+        val tvTrainerTag = findViewById<TextView>(R.id.tvTrainerTag)
+        val tvRarityBadge = findViewById<TextView>(R.id.tvRarityBadge)
+
+        val tvPokemonInfo = findViewById<TextView>(R.id.tvPokemonInfo)
+
+        val ivMoveEnergy1 = findViewById<ImageView>(R.id.ivMoveEnergy1)
+        val ivMoveEnergy2 = findViewById<ImageView>(R.id.ivMoveEnergy2)
+        val tvMoveName = findViewById<TextView>(R.id.tvMoveName)
+        val tvBMIDamage = findViewById<TextView>(R.id.tvBMIDamage)
         val tvBMIStatus = findViewById<TextView>(R.id.tvBMIStatus)
+        val tvMoveDescription = findViewById<TextView>(R.id.tvMoveDescription)
+        val tvCardFooter = findViewById<TextView>(R.id.tvCardFooter)
 
 
         // -----------------------------
@@ -76,9 +96,7 @@ class MainActivity : AppCompatActivity() {
         // -----------------------------
 
         sliderHeight.addOnChangeListener { _, value, _ ->
-
             height = value.toInt()
-
             tvHeight.text = height.toString()
         }
 
@@ -88,16 +106,13 @@ class MainActivity : AppCompatActivity() {
         // -----------------------------
 
         btnMinus.setOnClickListener {
-
             if (weight > 30) {
                 weight--
                 tvWeight.text = weight.toString()
             }
         }
 
-
         btnPlus.setOnClickListener {
-
             if (weight < 250) {
                 weight++
                 tvWeight.text = weight.toString()
@@ -106,110 +121,123 @@ class MainActivity : AppCompatActivity() {
 
 
         // -----------------------------
-        // CALCULAR IMC
+        // CALCULAR IMC & MOSTRAR CARTA POKÉMON
         // -----------------------------
 
         btnCalculate.setOnClickListener {
 
             val name = etName.text.toString().trim()
 
-
             // Comprovem que hi hagi nom
             if (name.isEmpty()) {
-
-                tilName.error = "Introdueix el teu nom"
-
+                tilName.error = "Introdueix el teu nom d'entrenador"
                 return@setOnClickListener
-
             } else {
-
                 tilName.error = null
             }
-
 
             // Convertim cm a metres
             val heightMeters = height / 100.0
 
-
             // Fórmula IMC
             val bmi = weight / (heightMeters * heightMeters)
 
+            // Nom de l'entrenador
+            tvTrainerTag.text = "Entrenador: $name"
+            tvBMIDamage.text = String.format(Locale.getDefault(), "IMC: %.1f", bmi)
 
-            // Mostrem el resultat
-            tvResultTitle.text = "IMC de $name"
+            // Segons el resultat IMC mostrem la carta Pokémon corresponent:
+            // 1. BMI baix (< 18.5) -> MAGIKARP
+            // 2. BMI mol bé (18.5 - 24.9) -> GYARADOS SHINY ✨
+            // 3. BMI mol mal (>= 25) -> CATERPIE
 
-            tvBMI.text = String.format(
-                Locale.getDefault(),
-                "%.1f",
-                bmi
-            )
-
-
-            // Categoria de l'IMC
             when {
-
                 bmi < 18.5 -> {
+                    // CARTA MAGIKARP (BMI BAJO)
+                    tvPokemonStage.text = "BÁSICO"
+                    tvPokemonName.text = "MAGIKARP"
+                    tvPokemonHP.text = "30 HP"
+                    ivTypeIcon.setImageResource(R.drawable.ic_water_energy)
 
-                    tvBMIStatus.text = "●  Baix pes"
+                    ivPokemonArt.setImageResource(R.drawable.ic_magikarp)
+                    tvRarityBadge.text = "◆ COMÚN"
+                    tvPokemonInfo.text = "Nº 129 Pokémon Pez  |  Alt: 0.9m  |  Peso: 10.0kg"
 
-                    tvBMIStatus.setTextColor(
-                        Color.parseColor("#6EA8FE")
-                    )
+                    ivMoveEnergy1.setImageResource(R.drawable.ic_water_energy)
+                    ivMoveEnergy2.setImageResource(R.drawable.ic_water_energy)
+                    tvMoveName.text = "Salpicadura / Splash"
 
-                    tvBMIStatus.backgroundTintList =
-                        ColorStateList.valueOf(
-                            Color.parseColor("#17345C")
-                        )
+                    tvBMIStatus.text = "●  BAIX PES"
+                    tvBMIStatus.setTextColor(Color.parseColor("#6EA8FE"))
+                    tvBMIStatus.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#17345C"))
+
+                    tvMoveDescription.text = "¡Salpicadura sin efecto! El teu IMC és baix (< 18,5). Magikarp necessita menjar més per poder evolucionar!"
+
+                    layoutCardContent.setBackgroundColor(Color.parseColor("#102A43"))
+                    cardResult.strokeColor = Color.parseColor("#29B6F6")
+                    tvCardFooter.text = "129/151 ◆ Carta Pokémon BMI"
                 }
 
+                bmi < 25.0 -> {
+                    // CARTA GYARADOS SHINY ✨ (BMI MUY BIEN / SALUDABLE)
+                    tvPokemonStage.text = "FASE 1 - SHINY"
+                    tvPokemonName.text = "GYARADOS SHINY ✨"
+                    tvPokemonHP.text = "130 HP"
+                    ivTypeIcon.setImageResource(R.drawable.ic_dragon_energy)
 
-                bmi < 25 -> {
+                    ivPokemonArt.setImageResource(R.drawable.ic_gyarados_shiny)
+                    tvRarityBadge.text = "★ RARA SHINY ✨"
+                    tvPokemonInfo.text = "Nº 130 Pokémon Atrocidad  |  Alt: 6.5m  |  Peso: 235.0kg"
 
-                    tvBMIStatus.text = "●  Pes saludable"
+                    ivMoveEnergy1.setImageResource(R.drawable.ic_dragon_energy)
+                    ivMoveEnergy2.setImageResource(R.drawable.ic_dragon_energy)
+                    tvMoveName.text = "Hiperrayo / Hyper Beam"
 
-                    tvBMIStatus.setTextColor(
-                        Color.parseColor("#54E69A")
-                    )
+                    tvBMIStatus.text = "●  PES SALUDABLE"
+                    tvBMIStatus.setTextColor(Color.parseColor("#54E69A"))
+                    tvBMIStatus.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#193D31"))
 
-                    tvBMIStatus.backgroundTintList =
-                        ColorStateList.valueOf(
-                            Color.parseColor("#193D31")
-                        )
+                    tvMoveDescription.text = "¡Ataque devastador! El teu IMC està en un estat impecable i legendari. ¡Tens la salut i força d'un Gyarados Shiny!"
+
+                    layoutCardContent.setBackgroundColor(Color.parseColor("#2D1226"))
+                    cardResult.strokeColor = Color.parseColor("#FFD700")
+                    tvCardFooter.text = "130/151 ★ Carta Pokémon Shiny"
                 }
-
-
-                bmi < 30 -> {
-
-                    tvBMIStatus.text = "●  Sobrepès"
-
-                    tvBMIStatus.setTextColor(
-                        Color.parseColor("#FFB84D")
-                    )
-
-                    tvBMIStatus.backgroundTintList =
-                        ColorStateList.valueOf(
-                            Color.parseColor("#4A3517")
-                        )
-                }
-
 
                 else -> {
+                    // CARTA CATERPIE (BMI MUY MAL / SOBREPÈS - OBESITAT)
+                    tvPokemonStage.text = "BÁSICO"
+                    tvPokemonName.text = "CATERPIE"
+                    tvPokemonHP.text = "40 HP"
+                    ivTypeIcon.setImageResource(R.drawable.ic_bug_energy)
 
-                    tvBMIStatus.text = "●  Obesitat"
+                    ivPokemonArt.setImageResource(R.drawable.ic_caterpie)
+                    tvRarityBadge.text = "● COMÚN"
+                    tvPokemonInfo.text = "Nº 010 Pokémon Gusano  |  Alt: 0.3m  |  Peso: 2.9kg"
 
-                    tvBMIStatus.setTextColor(
-                        Color.parseColor("#FF6B78")
-                    )
+                    ivMoveEnergy1.setImageResource(R.drawable.ic_bug_energy)
+                    ivMoveEnergy2.setImageResource(R.drawable.ic_bug_energy)
+                    tvMoveName.text = "Disparo Demora / String Shot"
 
-                    tvBMIStatus.backgroundTintList =
-                        ColorStateList.valueOf(
-                            Color.parseColor("#4A2028")
-                        )
+                    if (bmi < 30) {
+                        tvBMIStatus.text = "●  SOBREPÈS"
+                        tvBMIStatus.setTextColor(Color.parseColor("#FFB84D"))
+                        tvBMIStatus.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#4A3517"))
+                    } else {
+                        tvBMIStatus.text = "●  OBESITAT"
+                        tvBMIStatus.setTextColor(Color.parseColor("#FF6B78"))
+                        tvBMIStatus.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#4A2028"))
+                    }
+
+                    tvMoveDescription.text = "¡Disparo Demora frena el teu moviment! El teu IMC és elevat (≥ 25). Caterpie necessita un bon entrenament per moure's millor!"
+
+                    layoutCardContent.setBackgroundColor(Color.parseColor("#142918"))
+                    cardResult.strokeColor = Color.parseColor("#66BB6A")
+                    tvCardFooter.text = "010/151 ● Carta Pokémon BMI"
                 }
             }
 
-
-            // Fem visible la targeta de resultat
+            // Fem visible la targeta de resultat Pokémon
             cardResult.visibility = View.VISIBLE
         }
     }

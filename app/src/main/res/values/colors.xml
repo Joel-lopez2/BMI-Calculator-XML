@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="pokemon_yellow">#FFCC00</color>
+    <color name="pokemon_gold">#FFD700</color>
+    <color name="pokemon_blue">#3B4CCA</color>
+    <color name="pokemon_red">#FF0000</color>
+    <color name="card_bg_dark">#0F0F1A</color>
+    <color name="card_inner_dark">#19192D</color>
 </resources>
